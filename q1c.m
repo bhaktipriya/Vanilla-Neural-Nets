@@ -7,10 +7,11 @@ w2_ = -w2_;
 Y = [w1_;w2_];
 
 a = [1 1 1]; 
-
+margin = 0;
 color_mat = [ones(size(w1,1)) zeros(size(w2,1))];
-O = single_sample_perceptron(Y,a,1);
+O = perceptron_relaxation_margin(Y,a,margin,0.005);
 
 x = min([w1(:,1) ; w2(:,1)]):max([w1(:,1) ; w2(:,1)]);
-y = -(O(1) + (O(2)*x)/O(3);
+y = -(O(1) + (O(2)*x))/O(3);
 plot(w1(:,1),w1(:,2), 'g.',w2(:,1),w2(:,2), 'rs', x, y); 
+

@@ -2,7 +2,7 @@ function [ a ] = single_sample_perceptron( Y , a, lr)
 n = size(Y,1);
 iterations = 0;
 all_pos =0;
-while((all_pos ==0) || (iterations<100000))
+while((all_pos ==0) && (iterations<100000))
     iterations = iterations+1; 
     all_pos = 1;
     for i = 1:n
