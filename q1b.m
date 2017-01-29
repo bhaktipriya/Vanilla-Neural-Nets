@@ -7,7 +7,7 @@ w2_ = -w2_;
 Y = [w1_;w2_];
 
 a = [1 1 1]; 
-margin = 0;
+margin = 0.005;
 color_mat = [ones(size(w1,1)) zeros(size(w2,1))];
 O = single_sample_perceptron_margin(Y,a,margin,1);
 

@@ -5,13 +5,12 @@ w2_ = [ones(size(w2,1),1) w2];
 w2_ = -w2_;
 
 Y = [w1_;w2_];
-
-a = [1 1 1];
+a = [-10  1 1.5 ];
 % ground truth vector
-b = [ones(size(w1,1),1); -ones(size(w2,1),1)];
-theta = 0.0001;
+b = 0.01;
+theta = 0.000001;
 color_mat = [ones(size(w1,1)) zeros(size(w2,1))];
-O = widrow_hoff(Y,a,b,0.005,theta);
+O = widrow_hoff(Y,a,b,0.001,theta);
 
 x = min([w1(:,1) ; w2(:,1)]):max([w1(:,1) ; w2(:,1)]);
 y = -(O(1) + (O(2)*x))/O(3);

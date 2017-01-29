@@ -6,10 +6,10 @@ w2_ = -w2_;
 
 Y = [w1_;w2_];
 
-a = [1 1 1]; 
-margin = 0;
+a = [5 4 -1]; 
+margin = 0.01;
 color_mat = [ones(size(w1,1)) zeros(size(w2,1))];
-O = perceptron_relaxation_margin(Y,a,margin,0.005);
+O = perceptron_relaxation_margin(Y,a,margin,2);
 
 x = min([w1(:,1) ; w2(:,1)]):max([w1(:,1) ; w2(:,1)]);
 y = -(O(1) + (O(2)*x))/O(3);
